@@ -1,0 +1,42 @@
+span{
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 0 5px;
+}
+span.success{
+    background-color: #4CAF50;
+}
+span.warn{
+    background-color: #f08c00;
+}
+.tab{
+    border-collapse: collapse;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+.tab thead{
+    font-size: large;
+    font-weight: bold;
+    background-color: white;
+}
+.tab thead tr{
+    font-size: large;
+    font-weight: bold;
+    background-color: white;
+}
+.tab tr,td{
+    padding: 8px;
+    text-align: center;
+    border-bottom:1px solid #dddddd;
+}
+.tab tbody tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+.tab a{
+    display: inline-block;
+    color: white;
+    background-color: #f44336;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
