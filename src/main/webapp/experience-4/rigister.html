@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>注册</h1>
+<label>
+    <input type="checkbox" id="legal">我已阅读相关说明并遵守相关法律</label>
+<form id="register">
+    <div>
+        用户名:
+        <input type="text" name="username">
+        <br> 未来意向：
+        <label><input type="radio" name="purp" value="1">Java工程师</label>
+        <label><input type="radio" name="purp" value="2">测试工程师</label>
+        <label><input type="radio" name="purp" value="3">前端工程师</label>
+        <!-- 添加隐藏域 -->
+        <input type="hidden" name="purpose">
+        <br>
+        <br> 请从以下课程中选择2项最喜欢的课程
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses">Web开发技术
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses">软件项目管理
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses">数据库原理
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses">系统分析与设计
+                </label>
+            </li>
+        </ul>
+        地址：
+        <ul id="ul_address">
+        </ul>
+        <input name="address">
+        <button type="button" id="button_address">添加地址</button>
+        <br>
+    </div>
+    <button type="submit">提交</button>
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function (){
+        // 初始化
+        let registerForm =$("#register :input").prop("disabled",true);
+        let userNameVal = false;
+        let coursesVal = false;
+
+        // 同意复选框
+         $("#legal").click(function (){
+            let dic = !$(this).prop("checked");
+            registerForm.not($("button:submit")).prop("disabled",dic);
+        });
+
+        // 用户名长度校验
+        $("input[name=username]").change(function (){
+            if($(this).val().trim().length < 6){
+                alert("用户名长度需大于等于6个字符");
+                userNameVal = false;
+            } else{
+                userNameVal = true;
+            }
+        });
+
+        //喜欢的课程只能选两项
+        const amount = 2;
+        const checkboxs = $("input[name=courses]");
+        checkboxs.click(() => {
+            coursesVal = checkboxs.filter(":checked").length >= amount;
+            checkboxs.not(":checked").prop("disabled",coursesVal);
+        });
+
+
+        $("#button_address").click(() => {
+            let input = $("input[name=address]");
+            let item = $(`<li>${input.val()}</li>`);
+            input.val("");
+            item.css("display", "none");
+            $("#ul_address").append(item);
+            item.fadeIn(1000);
+        });
+
+        //支持取消选中的单选框
+        $radios.click(function (){
+            let ischecked = $(this).data("value");
+            if(ischecked){
+                $(this).prop("checked",false);
+                $(this).data("value", false);
+            }else{
+                $(this).prop("checked",true);
+                $(this).data("value", true);
+                radios.not(this).data("value",false);
+            }
+        });
+
+
+        $("input[name=username], input[name=courses]").change(() => {
+            let dis = userNameVal && coursesVal;
+            $("button:submit").prop("disabled", !dis);
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+.list-1 ul{
+    display: flex;
+    list-style-type: none;
+    background-color: #333333;
+}
+.list-1 li a{
+    display: block;
+    color: white;
+    padding:14px 16px;
+    text-decoration: none;
+}
+.list-1 li a:hover{
+    background-color: #111111;
+}
+.nav-1 .right{
+    margin-left: auto;
+}
+.area {
+    padding: 10px;
+    border: 2px solid #f08c00;
+    background-color: #ffec99;
+    border-radius: 5px;
+}
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.sidebar-1{
+    min-width: 200px;
+    /*padding: 10px 20px;*/
+}
+
+.sidebar-1 h2{
+    background-color: #3185bf;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.sidebar-2 ul{
+    list-style-type: none;
+
+}
+.sidebar-2 a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: #f1f1f1;
+    padding: 8px 20px;
+    transition: width 1s;
+    /*width: 200px;*/
+}
+.article{
+    width: calc(100% - 200px);
+}
+.sidebar-2 li a:hover{
+    color: white;
+    background-color: #03a9f4;
+}
+
+
+/*@media (max-width: 900px) {*/
+/*    .col-md-1{width: 8.3333333333%;}*/
+/*    .col-md-2{width: 16.666666667%;;}*/
+/*    .col-md-3{width: 25%;}*/
+/*    .col-md-4{width: 33.3333333%;}*/
+/*    .col-md-5{width: 41.6666666%;}*/
+/*    .col-md-6{width: 50%;}*/
+/*    .col-md-7{width: 58.3333333%;}*/
+/*    .col-md-8{width: 66.6666666%;}*/
+/*    .col-md-9{width: 75%;}*/
+/*    .col-md-10{width: 83.3333333%;}*/
+/*    .col-md-11{width: 91.6666666%;}*/
+/*    .col-md-12{width: 100%;}*/
+/*}*/
+
+/*    .col-md-1{width: 8.3333333333%;}*/
+/*    .col-md-2{width: 16.666666667%;;}*/
+/*    .col-md-3{width: 25%;}*/
+/*    .col-md-4{width: 33.3333333%;}*/
+/*    .col-md-5{width: 41.6666666%;}*/
+/*    .col-md-6{width: 50%;}*/
+/*    .col-md-7{width: 58.3333333%;}*/
+/*    .col-md-8{width: 66.6666666%;}*/
+/*    .col-md-9{width: 75%;}*/
+/*    .col-md-10{width: 83.3333333%;}*/
+/*    .col-md-11{width: 91.6666666%;}*/
+/*    .col-md-12{width: 100%;}*/

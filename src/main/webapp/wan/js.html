@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="show()">点击获取js对象的值</button>
+<div id="demo">被替换为js对象中的值</div>
+<script>
+    let person = {
+        firstName:"john",
+        lastName:"doe",
+        id:5566,
+        getFullName() {
+            return `${this.firstName}/${this.lastName}`;
+        }
+    }
+    let show = ()=>{
+        document.getElementById("demo").innerHTML =person.getFullName();
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+</body>
+</html>
